@@ -1,7 +1,8 @@
 
 // Un alert espone 5 numeri casuali.
-var numeriCasuali = [10,];
+var numeriCasuali = [];
 var arrayPC = [];
+var numeriIndovinati = [];
 var punteggio = 0;
 for (var i = 1; i < 6; i++) {
   numeriCasuali.push(getRandomIntInclusive(1, 100));
@@ -18,17 +19,18 @@ setTimeout(function () {
     console.log(arrayPC);
     i++;
   }
+  // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
   var z=0;
-  while (z<5){
+  while (z < arrayPC.length){
     if (numeriListaInArray(numeriCasuali, arrayPC[z]) == true){
       punteggio++;
+      numeriIndovinati.push(arrayPC[z]);
     }
     z++;
   }
-  console.log(punteggio);
+  console.log(punteggio, numeriIndovinati);
 
-}, 1000);
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
+}, 30000);
 
 
 // FUNZIONI
@@ -38,13 +40,8 @@ function numeriListaInArray(lista, numero) {
     if (lista[i] == numero) {
       return true;
     }
-    else {
-      return false;
-    }
   }
 }
-
-
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
