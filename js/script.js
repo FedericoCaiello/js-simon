@@ -6,7 +6,7 @@ var numeriIndovinati = [];
 var punteggio = 0;
 
 while (5 > numeriCasuali.length) {
-  var numeroCasuale = getRandomIntInclusive(1,5);
+  var numeroCasuale = getRandomIntInclusive(1,100);
   console.log(numeroCasuale);
   if (numeriListaInArray(numeriCasuali,numeroCasuale)==false) {
     numeriCasuali.push(numeroCasuale);
