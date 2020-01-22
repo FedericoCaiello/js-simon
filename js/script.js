@@ -41,6 +41,7 @@ function numeriListaInArray(lista, numero) {
       return true;
     }
   }
+  return false;
 }
 
 function getRandomIntInclusive(min, max) {
