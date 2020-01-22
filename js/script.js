@@ -4,8 +4,15 @@ var numeriCasuali = [];
 var arrayPC = [];
 var numeriIndovinati = [];
 var punteggio = 0;
-for (var i = 1; i < 6; i++) {
-  numeriCasuali.push(getRandomIntInclusive(1, 100));
+
+while (5 > numeriCasuali.length) {
+  var numeroCasuale = getRandomIntInclusive(1,5);
+  console.log(numeroCasuale);
+  if (numeriListaInArray(numeriCasuali,numeroCasuale)==false) {
+    numeriCasuali.push(numeroCasuale);
+
+    console.log(numeriCasuali);
+  }
 }
 alert('5 numeri casuali da 1 a 100 ' + numeriCasuali);
 
